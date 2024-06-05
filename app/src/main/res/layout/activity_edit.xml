@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context=".edit">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:padding="5dp"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <!-- Back button aligned to the left -->
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/app_bar_btn_bg"
+                android:gravity="center"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back"
+                app:tint="@android:color/white" />
+
+            <!-- Save button aligned to the right -->
+            <ImageButton
+                android:id="@+id/btnSave"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/app_bar_btn_bg"
+                android:gravity="center"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/download"
+                app:tint="@android:color/white" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/imgCamera"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/edit_btn_bgg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgCamera"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/btnCrop"
+            android:layout_width="60dp"
+            android:layout_height="85dp"
+            android:layout_marginLeft="10dp"
+            android:background="#282828"
+            android:focusable="true"
+            android:onClick="cropImage"
+            android:padding="15dp"
+            android:src="@drawable/crop"
+            app:tint="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/btnFilter"
+            android:layout_width="60dp"
+            android:layout_height="85dp"
+            android:layout_marginLeft="10dp"
+            android:background="#282828"
+            android:focusable="true"
+            android:padding="15dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/filterrs"
+            app:tint="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/btnAdjust"
+            android:layout_width="60dp"
+            android:layout_height="85dp"
+            android:layout_marginLeft="10dp"
+            android:background="#282828"
+            android:focusable="true"
+            android:onClick="Adjust"
+            android:padding="15dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/adjustment"
+            app:tint="@android:color/white" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

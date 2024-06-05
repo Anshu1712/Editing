@@ -37,10 +37,7 @@ public class crop extends AppCompatActivity {
             Uri destinationUri = Uri.fromFile(new File(getCacheDir(), SAMPLE_CROPPED_IMAGE_NAME + System.currentTimeMillis() + ".png"));
 
             // Configure UCrop with source and destination URIs, set aspect ratio and max size, then start the crop activity
-            UCrop.of(sourceUri, destinationUri)
-                    .withAspectRatio(0, 0)
-                    .withMaxResultSize(2000, 2000)
-                    .start(crop.this);
+            UCrop.of(sourceUri, destinationUri).withAspectRatio(0, 0).withMaxResultSize(2000, 2000).start(crop.this);
         } else {
             // If source URI is null, log an error and show a toast message, then finish the activity
             Log.e("cropActivity", "Image URI is null");

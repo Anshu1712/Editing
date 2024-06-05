@@ -85,8 +85,7 @@ public class adjustment extends AppCompatActivity {
 
         // Load the image into an ImageView using Glide
         ImageView imageView = findViewById(R.id.photoView);
-        Glide.with(this)
-                .load(sourceUri) // Load the image from the source URI
+        Glide.with(this).load(sourceUri) // Load the image from the source URI
                 .into(imageView); // Set the loaded image into the ImageView
 
         // Log the source URI for debugging purposes
@@ -157,21 +156,11 @@ public class adjustment extends AppCompatActivity {
     private void applyAdjustments() {
         // Create a ColorMatrix for brightness adjustment
         ColorMatrix brightnessMatrix = new ColorMatrix();
-        brightnessMatrix.set(new float[]{
-                1, 0, 0, 0, brightness * 255,
-                0, 1, 0, 0, brightness * 255,
-                0, 0, 1, 0, brightness * 255,
-                0, 0, 0, 1, 0
-        });
+        brightnessMatrix.set(new float[]{1, 0, 0, 0, brightness * 255, 0, 1, 0, 0, brightness * 255, 0, 0, 1, 0, brightness * 255, 0, 0, 0, 1, 0});
 
         // Create a ColorMatrix for contrast adjustment
         ColorMatrix contrastMatrix = new ColorMatrix();
-        contrastMatrix.set(new float[]{
-                contrast, 0, 0, 0, 128 * (1 - contrast),
-                0, contrast, 0, 0, 128 * (1 - contrast),
-                0, 0, contrast, 0, 128 * (1 - contrast),
-                0, 0, 0, 1, 0
-        });
+        contrastMatrix.set(new float[]{contrast, 0, 0, 0, 128 * (1 - contrast), 0, contrast, 0, 0, 128 * (1 - contrast), 0, 0, contrast, 0, 128 * (1 - contrast), 0, 0, 0, 1, 0});
 
         // Create a ColorMatrix for saturation adjustment
         ColorMatrix saturationMatrix = new ColorMatrix();
